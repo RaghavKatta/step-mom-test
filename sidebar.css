@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Nunito', sans-serif;
+    background-color: #bd3565; /* Deep raspberry background */
+    color: white; /* White text for contrast */
+}
+
+.container {
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.main-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #bd3565; /* Match background */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners for a playful look */
+}
+
+.sections-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+}
+
+.section h2 {
+    font-size: 16px;
+}
+
+.gray-rectangle {
+    width: 100%;
+    height: 170px; /* Reduced max-height */
+    background-color: white; /* White for contrast */
+    border-radius: 12px; /* Rounded corners */
+    padding: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Reduced gap */
+    color: #bd3565;
+}
+
+.current-items {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.history-items {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.history-items:hover {
+    opacity: 1;
+}
+
+.detail-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #bd3565; /* Match background */
+    border-radius: 12px;
+    color: white; /* White text for contrast */
+}
+
+.detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 50px);
+    color: white;
+}
+
+.header {
+    font-size: 20px; /* Slightly larger for boldness */
+    font-weight: 700; /* Bold font */
+    padding: 10px;
+    background-color: white; /* White for contrast */
+    color: #bd3565; /* Deep raspberry text */
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.suggestions-section, .warning-section {
+    margin-bottom: 10px; /* Reduce bottom margin */
+    padding: 10px; /* Add padding for consistent spacing */
+    color: #bd3565;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700; /* Bold font */
+    color: white; /* White text */
+}
+
+h1 {
+    font-family: "Nunito", sans-serif; /* Thicker font */
+    text-align: center; /* Center the text */
+    padding-top: 5px; /* Add padding at the bottom */
+    padding-bottom: 5px; /* Add padding at the bottom */
+    font-size: 30px; /* Increased font size */
+    font-weight: 900;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    max-height: 50px;
+    border: 2px solid white; /* White border for contrast */
+    border-radius: 12px; /* Rounded corners */
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 20px;
+    background-color: #bd3565; /* Match background */
+    color: white !important; /* White text */
+}
+
+.api-key-container {
+    margin-bottom: 15px;
+    font-family: 'Nunito', sans-serif;
+}
+
+#apiKeyInput {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+/* Style for interim transcription results */
+.input-field [interim] {
+    color: #666;
+    font-style: italic;
+}
+
+.input-field::placeholder {
+    color: white; /* White placeholder text */
+    opacity: .7; /* Ensure full opacity for the placeholder */
+}
+
+.detail-view .input-field {
+    height: 150px;
+}
+
+.main-view .input-field {
+    height: 200px;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.switch-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #bd3565; /* Deep raspberry background */
+    color: white; /* Deep raspberry text */
+    border: 2px solid white;
+    border-radius: 12px; /* Rounded corners */
+    font-size: 14px;
+    font-weight: 700; /* Bold font */
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.switch-button:hover {
+    background-color: white;
+    color: #bd3565;
+}
+
+.back-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #bd3565; /* Deep raspberry background */
+    color: white; /* Deep raspberry text */
+    border: 2px solid white;
+    border-radius: 12px; /* Rounded corners */
+    font-size: 14px;
+    font-weight: 700; /* Bold font */
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.back-button:hover {
+    background-color: white;
+    color: #bd3565;
+}
+
+.hidden {
+    display: none;
+}
+
+.warning-text {
+    color: #d32f2f;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.suggestion-text {
+    color: #1976d2;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.warning-box {
+    background-color: #ffdede; /* Darker raspberry */
+    border-left: 4px solid #d32f2f;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: black; /* Set text color to white */
+}
+
+.warning-box.old {
+    background-color: #f5f5f5; /* Darker raspberry */
+    border-left: 4px solid #9e9e9e;
+    color: #666; /* Set text color to a lighter gray */
+}
+
+.warning-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: black; /* Set text color to white */
+    margin-bottom: 4px;
+}
+
+.warning-box.old .warning-title {
+    color: #666;
+}
+
+.warning-quote {
+    font-style: italic;
+    margin-bottom: 4px;
+    font-size: 13px;
+    margin-right: 0px;
+}
+
+.warning-advice {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.suggestion-box {
+    background-color: #e3f2fd;
+    border-left: 4px solid #1976d2;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: black; /* set text color to black */
+}
+
+.suggestion-box.old {
+    background-color: #f5f5f5;
+    border-left: 4px solid #9e9e9e;
+    color: #666;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    display: none;
+}
+
+.warning-content {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+}

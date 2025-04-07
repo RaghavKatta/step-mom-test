@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="main-view" id="mainView">
+            <h1>STEP MOM TEST</h1>
+            <div class="sections-container">
+                <div class="section">
+                    <h2>Suggestions</h2>
+                    <div class="gray-rectangle"></div>
+                </div>
+                <div class="section">
+                    <h2>Warnings</h2>
+                    <div class="gray-rectangle"></div>
+                </div>
+            </div>
+            <!-- <div class="section">
+                <h2>Summary</h2>
+                <div class="gray-rectangle" id="summaryBox"></div>
+            </div> -->
+            <div class="api-key-container">
+                <label for="apiKeyInput">OpenAI API Key:</label>
+                <input type="password" id="apiKeyInput" placeholder="Enter your API key">
+            </div>
+            
+            <div>Timer: <span id="timerBox">00:00</span></div>
+            <textarea class="input-field" placeholder="Your live transcript will show up here..."></textarea>
+            <button class="switch-button" id="switchButton">
+                <i class="fas fa-exchange-alt"></i> Context
+            </button>
+        </div>
+        
+        <div class="detail-view hidden" id="detailView">
+            <h1>STEP MOM TEST</h1>
+            <div class="detail-content">
+                <div class="problem-section">
+                    <h2>problem</h2>
+                    <textarea class="input-field" placeholder="Big hypothesis / problem we're testing"></textarea>
+                </div>
+                <div class="customer-section">
+                    <h2>customer</h2>
+                    <textarea class="input-field" placeholder="Customer archetype / idea"></textarea>
+                </div>
+                <div class="questions-section">
+                    <h2>questions</h2>
+                    <textarea class="input-field" placeholder="3 key insights we need from them"></textarea>
+                </div>
+            </div>
+            <button class="back-button" id="backButton">
+                <i class="fas fa-exchange-alt"></i> Back
+            </button>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+</html>
